@@ -1,11 +1,7 @@
 class Stack
 
-  def initialize
-    @store = []
-  end
-
-  def sort_stack
-    @store.sort
+  def initialize(store = [])
+    @store = store
   end
 
   def pop
@@ -17,7 +13,7 @@ class Stack
   end
 
   def peek
-    @store
+    @store.last
   end
 
   def size
@@ -26,10 +22,6 @@ class Stack
 
   def empty?
     @store.empty?
-  end
-
-  def max
-    sort_stack.last
   end
 
 end

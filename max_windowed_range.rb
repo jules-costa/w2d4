@@ -28,7 +28,8 @@ p windowed_max_range([1, 3, 2, 5, 4, 8], 5) == 6 # 3, 2, 5, 4, 8
 #optimized:
 
 def op_windowed_max_range(arr, w)
-  
+  current_max_range = nil
+  stacked = Stack.new(arr)
 end
 
 p op_windowed_max_range([1, 0, 2, 5, 4, 8], 2) == 4 # 4, 8

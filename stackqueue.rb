@@ -1,27 +1,32 @@
 require_relative "stack"
-require_relative "minmaxstack"
+require_relative "queue"
 
 class StackQueue
 
+  attr_accessor :store, :store2
+
   def initialize
-    @store = Stack.new
-    @store2 = Stack.new
+    @in_stack = Stack.new
+    @out_stack = Stack.new
   end
 
   def dequeue
-    @store.pop
+    if @out_stack.empty?
+      @out_stack << @in_stack.pop until @in_stack.empty?
+    end
+    @out_stack.pop
   end
 
   def enqueue(el)
-    @store << el
+    @in_stack << el
   end
 
   def size
-    @store2.count
+    @in_stack.count + @out_stack.count
   end
 
   def empty?
-    @store2.empty?
+    @in_stack.empty? && @out_stack.empty?
   end
 
 end

@@ -2,18 +2,12 @@ require_relative "stackqueue"
 
 class MinMaxStack
 
+  attr_accessor :min, :max
+
   def initialize
     @store = Stack.new
     @max = nil
     @min = nil
-  end
-
-  def min
-    @min
-  end
-
-  def max
-    @max
   end
 
   def update_min(el)
@@ -27,11 +21,11 @@ class MinMaxStack
   end
 
   def dequeue
-    @store.pop
+    @store.dequeue
   end
 
   def enqueue(el)
-    @store << el
+    @store.enqueue(el)
     update_max(el)
     update_min(el)
   end
