@@ -5,7 +5,7 @@
 def windowed_max_range(arr, w)
   current_max_range = nil
 
-  windows = arr.each_cons(w)
+  windows = arr.each_cons(w) 
 
   windows.each do |window|
     difference = window.max - window.min
