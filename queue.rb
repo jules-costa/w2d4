@@ -4,19 +4,24 @@ class Queue
     @store = []
   end
 
-  def enqueue
+  def enqueue(el)
+    @store << el
   end
 
   def dequeue
+    @store.shift
   end
 
   def peek
+    @store
   end
 
   def size
+    @store.count
   end
 
   def empty?
+    @store.empty?
   end
 
 end
