@@ -2,18 +2,20 @@ require_relative "minmaxstack"
 
 class MinMaxStackQueue
 
+  # attr_accessor :in_stack, :out_stack
+
   def initialize
     @in_stack = MinMaxStack.new
     @out_stack = MinMaxStack.new
   end
 
   def enqueue(el)
-    @in_stack << el
+    @in_stack.push(el)
   end
 
   def dequeue
     if @out_stack.empty?
-      @out_stack << @in_stack.pop until @in_stack.empty?
+      @out_stack.push(@in_stack.pop) until @in_stack.empty?
     else
       @out_stack.pop
     end
@@ -37,7 +39,7 @@ class MinMaxStackQueue
     maxes.max
   end
 
-  def size 
+  def size
     @in_stack.size + @out_stack.size
   end
 

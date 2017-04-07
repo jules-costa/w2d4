@@ -1,9 +1,8 @@
 require_relative "stack"
-require_relative "queue"
 
 class StackQueue
 
-  attr_accessor :store, :store2
+  # attr_accessor :in_stack, :out_stack
 
   def initialize
     @in_stack = Stack.new

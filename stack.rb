@@ -1,5 +1,7 @@
 class Stack
 
+  # attr_accessor :store
+
   def initialize(store = [])
     @store = store
   end
